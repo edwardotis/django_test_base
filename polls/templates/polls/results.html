@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+{% block title %}Poll Results{% endblock %}
+
+
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'polls:home' %}">Polls</a></li>
+        <li class="active">Results</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+
+    <h2>{{ poll.question }}</h2>
+
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                {% for choice in poll.choice_set.all %}
+                    <li class="list-group-item">{{ choice.choice_text }} <span class="badge">{{ choice.votes }}</span>
+                        vote{{ choice.votes|pluralize }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <a href="{% url 'polls:detail' poll.id %}">Vote again?</a>
+{% endblock %}

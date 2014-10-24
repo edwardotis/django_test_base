@@ -1,0 +1,1 @@
+web: gunicorn mysite.wsgi -b "0.0.0.0:$PORT" -w 1 -t 1801 --log-level DEBUG

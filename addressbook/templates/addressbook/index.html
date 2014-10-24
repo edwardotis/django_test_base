@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+{% block title %}List of Polls{% endblock %}
+
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li class="active">Address Book</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+
+    <h2>School Staff Address Book</h2>
+    <ul>
+        <li>Schools - <a href='{% url 'addressbook:school_list' %}'>List</a>/<a
+                href='{% url 'addressbook:create_school' %}'>Add</a>
+    </ul>
+{% endblock %}

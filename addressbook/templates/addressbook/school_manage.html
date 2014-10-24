@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+{% block title %}{{ form.title }}{% endblock %}
+{% block breadcrumb %}
+
+    <ol class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'addressbook:home' %}">Address Book</a></li>
+        <li class="active">Manage School</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <h2>{{ form.title }}</h2>
+    {% if form.initial.school_id %}
+        <form action="{% url 'addressbook:update_school' school_id=form.initial.school_id %}" method="post" role="form">
+    {% else %}
+        <form action="{% url 'addressbook:create_school' %}" method="post" role="form">
+    {% endif %}
+{% csrf_token %}
+<div class="control-group error">
+    {{ form.non_field_errors }}
+</div>
+{{ form.as_p }}
+
+<button type="submit" class="btn btn-default">Submit</button>
+</form>
+    {% if form.initial.school_id %}
+        <form action="{% url 'addressbook:delete_school' school_id=form.initial.school_id %}" method="post" role="form">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-default">Delete</button>
+        </form>
+    {% endif %}
+
+{% endblock %}

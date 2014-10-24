@@ -1,0 +1,88 @@
+[
+    {
+        "model": "polls.poll",
+        "pk": 1,
+        "fields": {
+            "question": "What's your favorite browser?",
+            "pub_date": "2014-10-01T07:00:00Z"
+        }
+    },
+    {
+        "model": "polls.choice",
+        "pk": 1,
+        "fields": {
+            "choice_text": "Internet Explorer",
+            "votes": "1",
+            "poll": "1"
+        }
+    },
+    {
+        "model": "polls.choice",
+        "pk": 2,
+        "fields": {
+            "choice_text": "FireFox",
+            "votes": "132",
+            "poll": "1"
+        }
+    },
+    {
+        "model": "polls.choice",
+        "pk": 3,
+        "fields": {
+            "choice_text": "Google Chrome",
+            "votes": "542",
+            "poll": "1"
+        }
+    },
+    {
+        "model": "polls.poll",
+        "pk": 2,
+        "fields": {
+            "question": "What's the best school mascot?",
+            "pub_date": "2014-09-01T07:00:00Z"
+        }
+    },
+    {
+        "model": "polls.choice",
+        "pk": 4,
+        "fields": {
+            "choice_text": "Patriots",
+            "votes": "1",
+            "poll": "2"
+        }
+    },
+    {
+        "model": "polls.choice",
+        "pk": 5,
+        "fields": {
+            "choice_text": "Bears",
+            "votes": "233",
+            "poll": "2"
+        }
+    },
+    {
+        "model": "polls.choice",
+        "pk": 6,
+        "fields": {
+            "choice_text": "Cowboys",
+            "votes": "1542",
+            "poll": "2"
+        }
+    },
+    {
+        "model": "polls.poll",
+        "pk": 3,
+        "fields": {
+            "question": "School with best academics?",
+            "pub_date": "2014-09-03T07:00:00Z"
+        }
+    },
+    {
+        "model": "polls.poll",
+        "pk": 4,
+        "fields": {
+            "question": "School with best campus?",
+            "pub_date": "2014-09-04T07:00:00Z"
+        }
+    }
+]

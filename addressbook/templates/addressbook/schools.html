@@ -1,0 +1,40 @@
+{% extends "base_generic.html" %}
+{% block title %}List of Schools{% endblock %}
+{% block breadcrumb %}
+
+    <ol class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'addressbook:home' %}">Address Book</a></li>
+        <li class="active">Schools</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+    <h2>Schools</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Name<a href="{% url 'addressbook:school_list' %}?sort_by=name">&#9650;</a><a
+                        href="{% url 'addressbook:school_list' %}?sort_by=-name">&#9660;</a></th>
+                <th>Zipcode</th>
+                <th>Email</th>
+                <th>Music Dept</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for school in schools_list %}
+                <tr>
+                    <td><a href="{% url 'addressbook:school_detail' school.school_id %}">{{ school.name }}</a></td>
+                    <td>{{ school.zipcode }}</td>
+                    <td>{{ school.email }}</td>
+                    <td>{% if school.has_music_dept %}X{% endif %}</td>
+                    <td><a href="{% url 'addressbook:update_school' school.school_id %}">Edit</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

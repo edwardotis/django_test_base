@@ -1,0 +1,36 @@
+[
+    {
+        "pk": 1,
+        "model": "addressbook.school",
+        "fields": {
+            "modified_on": "2014-10-01T07:00:00Z",
+            "email": "admin@jp.net",
+            "created_on": "2014-10-01T07:00:00Z",
+            "name": "Jackson Preparatory School",
+            "zipcode": 39211
+        }
+    },
+    {
+        "pk": 2,
+        "model": "addressbook.school",
+        "fields": {
+            "modified_on": "2014-10-01T07:00:00Z",
+            "email": "info@murrah.net",
+            "created_on": "2014-10-02T07:00:00Z",
+            "name": "Murrah High School",
+            "zipcode": 39213
+        }
+    },
+    {
+        "pk": 3,
+        "model": "addressbook.school",
+        "fields": {
+            "modified_on": "2014-10-03T07:00:00Z",
+            "email": "info@standrews.net",
+            "created_on": "2014-10-03T07:00:00Z",
+            "name": "St. Andrews",
+            "zipcode": 39001
+        }
+    }
+
+]

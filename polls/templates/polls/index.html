@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+{% block title %}List of Polls{% endblock %}
+{% block additional_headers %}
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}"/>
+{% endblock %}
+
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'polls:home' %}">Polls</a></li>
+        <li class="active">List</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+
+    {% if latest_poll_list %}
+        <ul class="list-group">
+            {% for poll in latest_poll_list %}
+                <li class="list-group-item"><a href="{% url 'polls:detail' pk=poll.id %}">{{ poll.question }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+{% endblock %}
+

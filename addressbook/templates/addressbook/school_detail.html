@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+{% load staticfiles %}
+{% block title %}School Detail{% endblock %}
+
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'addressbook:home' %}">Addressbook</a></li>
+        <li class="active">School Detail</li>
+    </ol>
+{% endblock %}
+
+{% block content %}
+
+    <h2>School Detail</h2>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item">Name: {{ school.name }}</li>
+                <li class="list-group-item">Zipcode: {{ school.zipcode }}</li>
+                <li class="list-group-item">Email: {{ school.email }}</li>
+                <li class="list-group-item">Has Music: {{ school.has_music_dept }}</li>
+            </ul>
+            <form action="{% url 'addressbook:update_school' school_id=school.school_id %}" method="get" role="form">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-default">Edit</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'header.html' %}
+    <title>{% block title %}Please set a page title{% endblock %}</title>
+    {% block additional_headers %} {% endblock %}
+</head>
+<body>
+<!-- Fixed navbar -->
+{% include 'navbar.html' %}
+
+<!-- Begin page content -->
+<div class="container">
+    {% block breadcrumb %}
+        <ol class="breadcrumb">
+            <li><a href="{% url 'home' %}">Please</a></li>
+            <li><a href="{% url 'home' %}">Set</a></li>
+            <li class="active">Breadcrumbs</li>
+        </ol>
+    {% endblock %}
+    {% block content %}
+        {#        Content goes here. #}
+    {% endblock %}
+</div>
+
+{% include 'footer.html' %}
+
+</body>
+</html>
